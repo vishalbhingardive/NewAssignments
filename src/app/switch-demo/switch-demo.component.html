@@ -1,0 +1,24 @@
+<p>switch-demo works!</p>
+<div *ngFor="let obj of peopleByCity" appHighlightDirective>
+    <div [ngSwitch]="obj.city">
+        <h2 *ngSwitchCase="'Pune'">{{obj.city}}:Maharashtra</h2>
+        <h2 *ngSwitchCase="'Belgaum'">{{obj.city}}:Karnataka</h2>
+        <h2 *ngSwitchDefault>SomeOther State</h2>
+    </div >
+    <table border="2px" >
+        <th>Name</th> <th>Age</th>
+        <tr *ngFor="let person of obj.people">
+            <td>{{person.name}}</td> 
+            <td>{{person.age}}</td>
+        </tr>
+    </table>
+</div>
+
+<h3>Using ng-If:Print all those who are 49 years of age and older</h3>
+<div *ngFor="let person of people">
+    <span *ngIf="person.age>=49">{{person.name+" "+person.age}}</span>
+</div>
+
+<div appHighlightDirective [color]="'green'">
+    <h1>Vishal</h1>
+</div>
